@@ -33,12 +33,13 @@
 		
 		<main id="app"><!--  Début div vue.js  -->
 
-			<!-- Header -->
-			<div id="before-nav">
+			
+			<div id="before-nav"><!-- Header -->
 				<h1>BMF NEWS</h1>
 			</div><!-- Fin Header -->
 			
-			<template v-if="!inPageArticle"> <!--debut template -->
+			
+			<template v-if="!inPageArticle"> <!-- Début template -->
 				
 				<nav><!-- Nav -->
 					
@@ -61,7 +62,7 @@
 
 				<!-- Section Actualité -->
 				
-				<div class="container"> <!-- container  -->
+				<div class="container"> <!-- Container  -->
 					<h2>BREAKING NEWS</h2>
 
 					
@@ -83,23 +84,24 @@
 
 					<!-- Fin de Section Actualité  -->
 
-				</div> <!-- fin container  -->
+				</div> <!-- Fin container  -->
 				
 			</template>  <!--Fin de template  -->
 
+			<!-- Si je clique sur le bouton en savoir + alors je serais redirigé vers ce deuxieme template  -->
 
-			<template v-else> <!--debut template  -->
-				<nav>
+			<template v-else> <!-- Début template  -->
+				<nav> <!-- debut nav -->
 					
-					<ul>
+					<ul> 
 						<li><a href="index.html" class="animsition-link" ><i class="fas fa-home"></i> Home</a></li>
 						
 					</ul>
-				</nav>
+				</nav> <!-- Fin de nav -->
 
 
 
-				<div class="container">
+				<div class="container"> <!-- Debut container -->
 					<div class="single-article">
 						<div class="new-item" >
 							
@@ -123,7 +125,7 @@
 					
 					
 					
-				</div>
+				</div> <!-- Fin container -->
 				
 			</template><!-- Fin de template  -->
 
