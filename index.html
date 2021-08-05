@@ -1,0 +1,163 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Blink test</title>
+		<!-- link css -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- responsive -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<!-- utf 8 -->
+		<meta charset="utf-8">
+		
+		<!-- Font-Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<!-- google font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet">
+		<!-- CDN vue js  -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+		<!-- CDN Axios -->
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<!-- animsition -->
+		<link href="sandbox.css" rel="stylesheet">
+		<link href="dist/css/animsition.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="animsition" data-animsition-in-class="fade-in"
+		data-animsition-in-duration="1000"
+		data-animsition-out-class="fade-out"
+		data-animsition-out-duration="800"> <!-- animsition -->
+		
+		<main id="app"><!--  Début div vue.js  -->
+
+			<!-- Header -->
+			<div id="before-nav">
+				<h1>BMF NEWS</h1>
+			</div><!-- Fin Header -->
+			
+			<template v-if="!inPageArticle"> <!--debut template -->
+				
+				<nav><!-- Nav -->
+					
+					<ul>
+						<li><a href="index.html" class="animsition-link" ><i class="fas fa-home"></i> Home</a></li>
+						<li><a @click="business()" ><i class="fas fa-handshake"></i> Business</a></li>
+						<li><a @click="entertainment()" ><i class="fas fa-film"></i> Entertainment</a></li>
+						<li><a @click="health()"><i class="fas fa-heartbeat"></i> Health</a></li>
+						<li><a @click="science()"><i class="fas fa-flask"></i> Science</a></li>
+						<li><a @click="sport()"><i class="fas fa-football-ball"></i> Sport</a></li>
+						<li><a @click="technology()"><i class="fas fa-microchip"></i> Technology</a></li>
+					</ul>
+				</nav> <!-- Fin de Nav -->
+
+				
+
+				
+
+				
+
+				<!-- Section Actualité -->
+				
+				<div class="container"> <!-- container  -->
+					<h2>BREAKING NEWS</h2>
+
+					
+					<div class="articles-grid">
+						<div class="news-list" v-bind:key="noticias.id" v-for=" (noticias, i) in posts.articles">
+							
+							
+							
+							
+							<img v-bind:src="noticias.urlToImage" alt=""><br>
+							<div class="div-titre">
+								<h4>{{noticias.title}}</h4>
+							</div>
+							<p>{{noticias.description}}</p>
+							<p>Paru le {{noticias.publishedAt}}</p>
+							<a id="btn-info-id" class="btn-info" @click="showArticle(i)">En savoir +</a>
+						</div>
+					</div>
+
+					<!-- Fin de Section Actualité  -->
+
+				</div> <!-- fin container  -->
+				
+			</template>  <!--Fin de template  -->
+
+
+			<template v-else> <!--debut template  -->
+				<nav>
+					
+					<ul>
+						<li><a href="index.html" class="animsition-link" ><i class="fas fa-home"></i> Home</a></li>
+						
+					</ul>
+				</nav>
+
+
+
+				<div class="container">
+					<div class="single-article">
+						<div class="new-item" >
+							
+							
+							
+							
+							<img v-bind:src="currentArticle.urlToImage" alt=""><br>
+							<div class="div-titre">
+								<h4>{{ currentArticle.title}}</h4>
+							</div>
+							<p>{{currentArticle.content}}</p>
+							<p>Paru le {{currentArticle.publishedAt}}</p>
+							<p>Auteur: {{currentArticle.author}}</p>
+							<!-- <a :href="currentArticle.url" target="_blank"  >Lien de l'article</a> -->
+						</div>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+				</div>
+				
+			</template><!-- Fin de template  -->
+
+			<footer id="nav-footer" >
+				
+				
+				<ul>
+					<li><a href="#"> Business</a></li>
+					<li><a href="#"> Entertainment</a></li>
+					<li><a href="#"> Health</a></li>
+					<li><a href="#"> Science</a></li>
+					<li><a href="#"> Sport</a></li>
+					<li><a href="#"> Technology</a></li>
+				</ul>
+				
+
+				<p>© Copyright 2018-2021 BMF.com. Tous droits réservés. Site édité par Cedric</p>
+			</footer>
+
+
+		</main> <!--  Fin div vue.js  -->
+
+
+	</div> <!--  Fin animsition  -->
+
+	<script src="vuejs/home.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="dist/js/animsition.min.js" charset="utf-8"></script>
+	<script>
+		$(document).ready(function() {
+			$('.animsition').animsition();
+		});
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="dist/js/animsition.min.js" charset="utf-8"></script>
+</body>
+</html>
